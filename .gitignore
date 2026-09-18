@@ -1,0 +1,40 @@
+# === KiCad backups & autosave ===
+*.bak
+*-bak
+*~
+_autosave-*
+*-save.pro
+*.kicad_pcb-bak
+*.kicad_sch-bak
+fp-info-cache
+
+# === KiCad lock files ===
+*.lck
+*.kicad_prl
+
+# === Project local settings (per-user, don't share) ===
+*-cache.lib
+*.dcm
+sym-lib-table
+fp-lib-table
+!/**/sym-lib-table
+!/**/fp-lib-table
+
+# === 3D model caches ===
+*.3dshapes/
+3d-cache/
+
+# === Netlist / BOM exports (usually regenerated) ===
+*.net
+*.xml
+!*.kicad_sym  # don't accidentally ignore symbol libs
+
+# === OS junk ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Editor junk ===
+.vscode/
+.idea/
+*.swp

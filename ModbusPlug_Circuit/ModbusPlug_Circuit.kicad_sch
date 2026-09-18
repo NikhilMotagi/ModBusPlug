@@ -1,0 +1,140 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "fd9cd8db-e183-481d-a9fb-02d7f841de3e")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 76.2 76.2)
+		(size 12.7 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "12aeb630-4f4f-4023-a897-5e59c6e80f01")
+		(property "Sheetname" "USB Type C"
+			(at 76.2 75.4884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "USB_Type_C_plug.kicad_sch"
+			(at 76.2 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ModbusPlug_Circuit"
+				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 152.4 76.2)
+		(size 25.4 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "4af16e81-54d5-42f7-bc81-ac15fb5625fb")
+		(property "Sheetname" "Modbus_Transciever"
+			(at 152.4 75.4884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SN65HVD75DR_ModbusTransciever.kicad_sch"
+			(at 152.4 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ModbusPlug_Circuit"
+				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 101.6 76.2)
+		(size 25.4 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a7daddd0-f6f1-44fc-b4f4-22ebb310941e")
+		(property "Sheetname" "USB To UART"
+			(at 101.6 75.4884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CP2102N_USBtoUART.kicad_sch"
+			(at 101.6 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ModbusPlug_Circuit"
+				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
