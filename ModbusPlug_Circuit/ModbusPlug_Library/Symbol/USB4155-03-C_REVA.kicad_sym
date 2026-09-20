@@ -187,8 +187,8 @@
 		)
 		(symbol "USB4155-03-C_REVA_0_0"
 			(rectangle
-				(start -12.7 -17.78)
-				(end 12.7 15.24)
+				(start -12.7 15.24)
+				(end 12.7 -17.78)
 				(stroke
 					(width 0.254)
 					(type default)

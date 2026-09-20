@@ -5,6 +5,72 @@
 	(uuid "fd9cd8db-e183-481d-a9fb-02d7f841de3e")
 	(paper "A4")
 	(lib_symbols)
+	(wire
+		(pts
+			(xy 82.55 76.2) (xy 82.55 69.85)
+		)
+		(stroke
+			(width 0.8)
+			(type solid)
+			(color 194 0 0 1)
+		)
+		(uuid "201ae563-3793-4a1d-ba04-321416651a4a")
+	)
+	(wire
+		(pts
+			(xy 82.55 69.85) (xy 114.3 69.85)
+		)
+		(stroke
+			(width 0.8)
+			(type solid)
+			(color 194 0 0 1)
+		)
+		(uuid "4cb83dd8-c3f5-437d-82f4-06225f345047")
+	)
+	(wire
+		(pts
+			(xy 88.9 91.44) (xy 101.6 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 255 0 1)
+		)
+		(uuid "89510edf-16ec-4f91-b49d-f931f7353cd9")
+	)
+	(wire
+		(pts
+			(xy 88.9 85.09) (xy 101.6 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "eb1b3740-8f1d-47c0-982e-e8741ef32da6")
+	)
+	(wire
+		(pts
+			(xy 114.3 69.85) (xy 114.3 76.2)
+		)
+		(stroke
+			(width 0.8)
+			(type solid)
+			(color 194 0 0 1)
+		)
+		(uuid "ef6c1d1d-4094-40fe-a43c-9d8e9a889c05")
+	)
+	(wire
+		(pts
+			(xy 88.9 95.25) (xy 101.6 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 255 0 1)
+		)
+		(uuid "f396d4ff-4aa1-49f1-b03e-cf46d16bb653")
+	)
 	(sheet
 		(at 76.2 76.2)
 		(size 12.7 25.4)
@@ -12,7 +78,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -21,8 +86,8 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "12aeb630-4f4f-4023-a897-5e59c6e80f01")
-		(property "Sheetname" "USB Type C"
-			(at 76.2 75.4884 0)
+		(property "Sheetname" "USB Type C & Power"
+			(at 76.2 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37,6 +102,46 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "USB_D+" bidirectional
+			(at 88.9 91.44 0)
+			(uuid "debf4144-735b-418b-844c-3f530b6fcc99")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB_D-" bidirectional
+			(at 88.9 95.25 0)
+			(uuid "62013bac-c5f2-4f39-a453-04e9ee885cc4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VDD" output
+			(at 82.55 76.2 90)
+			(uuid "ce223582-b7a4-4669-8a28-90e55244b7ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VBUS" output
+			(at 88.9 85.09 0)
+			(uuid "71104de1-e187-4971-843d-2dc2f83c03c4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -72,7 +177,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "SN65HVD75DR_ModbusTransciever.kicad_sch"
+		(property "Sheetfile" "SN65HVD75DRBR_ModbusTransciever.kicad_sch"
 			(at 152.4 102.1846 0)
 			(effects
 				(font
@@ -96,7 +201,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -106,7 +210,7 @@
 		)
 		(uuid "a7daddd0-f6f1-44fc-b4f4-22ebb310941e")
 		(property "Sheetname" "USB To UART"
-			(at 101.6 75.4884 0)
+			(at 101.6 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -121,6 +225,76 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "Din_+" bidirectional
+			(at 101.6 91.44 180)
+			(uuid "675b8d81-14ee-4741-b2e0-577d58809341")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Din_-" bidirectional
+			(at 101.6 95.25 180)
+			(uuid "d2ea2232-b833-41a4-b032-e1fec63388a8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RS485_DE" output
+			(at 127 95.25 0)
+			(uuid "bc6f0153-b75c-4cd5-8a03-4f3b0aa05936")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "UART_RX" input
+			(at 127 91.44 0)
+			(uuid "fb7a3c9e-e499-4eb6-9173-b5d6b26b8b0d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "UART_TX" output
+			(at 127 87.63 0)
+			(uuid "6f43e793-f966-47a1-91e6-682c7da1b6af")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VBUS_in" input
+			(at 101.6 85.09 180)
+			(uuid "fa05774a-e430-4128-bc9d-c30a8e21aa71")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Vin" input
+			(at 114.3 76.2 90)
+			(uuid "c7e4ed62-b22b-4dac-a8cf-5c1b43c78a92")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
