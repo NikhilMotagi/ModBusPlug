@@ -1,0 +1,8 @@
+V0.1
+Dated : 23-09-26
+-Started SN65HVD75DRBR circuit schematic
+-Added USBLS6 to Type C connector schematic
+-Played with USBLS6, CP2102N component placement
+-Added Net classes to PCB
+-Reduced Copper clearance to 0.1mm, in netclass setting (helped with the mysterious margin issue)
+-Updated gitignore file

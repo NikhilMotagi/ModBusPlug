@@ -5,6 +5,12 @@
 	(uuid "fd9cd8db-e183-481d-a9fb-02d7f841de3e")
 	(paper "A4")
 	(lib_symbols)
+	(junction
+		(at 114.3 69.85)
+		(diameter 0)
+		(color 194 0 0 1)
+		(uuid "295e08ef-6e76-4a4c-910a-7d49b929127e")
+	)
 	(wire
 		(pts
 			(xy 82.55 76.2) (xy 82.55 69.85)
@@ -29,6 +35,17 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 69.85) (xy 114.3 69.85)
+		)
+		(stroke
+			(width 0.8)
+			(type default)
+			(color 194 0 0 1)
+		)
+		(uuid "7ea64b72-a643-45ec-bd68-f285863f6efd")
+	)
+	(wire
+		(pts
 			(xy 88.9 91.44) (xy 101.6 91.44)
 		)
 		(stroke
@@ -37,6 +54,17 @@
 			(color 0 255 0 1)
 		)
 		(uuid "89510edf-16ec-4f91-b49d-f931f7353cd9")
+	)
+	(wire
+		(pts
+			(xy 165.1 76.2) (xy 165.1 69.85)
+		)
+		(stroke
+			(width 0.8)
+			(type default)
+			(color 194 0 0 1)
+		)
+		(uuid "9738e5d6-20ae-4504-99cd-3aaefd4330ac")
 	)
 	(wire
 		(pts
@@ -184,6 +212,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "Vin" input
+			(at 165.1 76.2 90)
+			(uuid "b174442e-25c7-4a40-8945-587014e9bdae")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances

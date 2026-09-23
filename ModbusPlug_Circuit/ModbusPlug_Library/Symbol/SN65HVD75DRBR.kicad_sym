@@ -347,6 +347,25 @@
 					)
 				)
 			)
+			(pin power_in line
+				(at 0 -12.7 90)
+				(length 2.54)
+				(hide yes)
+				(name "EPad"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
 			(pin bidirectional line
 				(at 10.16 2.54 180)
 				(length 2.54)

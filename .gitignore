@@ -1,40 +1,62 @@
-# === KiCad backups & autosave ===
+# ============================================================
+# KiCad - Temporary / Backup / Autosave files
+# ============================================================
+
 *.bak
+*.lck
+*.kicad_prl
+*.kicad_pcb-bak
+*.kicad_sch-bak
 *-bak
 *~
 _autosave-*
 *-save.pro
-*.kicad_pcb-bak
-*.kicad_sch-bak
+
+# KiCad cache / generated files
 fp-info-cache
 
-# === KiCad lock files ===
-*.lck
-*.kicad_prl
+# ============================================================
+# KiCad - Local library / user-specific files
+# ============================================================
 
-# === Project local settings (per-user, don't share) ===
 *-cache.lib
-*.dcm
+
+# These are normally project/user-specific and should generally
+# NOT be committed unless you intentionally share them.
 sym-lib-table
 fp-lib-table
-!/**/sym-lib-table
-!/**/fp-lib-table
 
-# === 3D model caches ===
+# ============================================================
+# Generated files
+# ============================================================
+
+*.net
+*.xml
+
+# ============================================================
+# 3D / generated cache directories
+# ============================================================
+
 *.3dshapes/
 3d-cache/
 
-# === Netlist / BOM exports (usually regenerated) ===
-*.net
-*.xml
-!*.kicad_sym  # don't accidentally ignore symbol libs
+# ============================================================
+# Operating System junk
+# ============================================================
 
-# === OS junk ===
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# === Editor junk ===
+# ============================================================
+# Editors / IDEs
+# ============================================================
+
 .vscode/
 .idea/
+
 *.swp
+*.swo
+
+# KiCad automatic backup folder
+backup/

@@ -451,7 +451,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R_Network04_Split"
+		(symbol "Device:R_Pack04"
 			(pin_names
 				(offset 0)
 				(hide yes)
@@ -460,23 +460,23 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "RN"
-				(at 2.032 0 90)
+				(at -7.62 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "R_Network04_Split"
-				(at 0 0 90)
+			(property "Value" "R_Pack04"
+				(at 5.08 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "Resistor_THT:R_Array_SIP5"
-				(at -2.032 0 90)
+			(property "Footprint" ""
+				(at 6.985 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -484,7 +484,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.vishay.com/docs/31509/csc.pdf"
+			(property "Datasheet" "~"
 				(at 0 0 0)
 				(effects
 					(font
@@ -493,7 +493,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "4 resistor network, star topology, bussed resistors, split"
+			(property "Description" "4 resistor network, parallel topology"
 				(at 0 0 0)
 				(effects
 					(font
@@ -502,7 +502,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "R network star-topology"
+			(property "ki_keywords" "R network parallel topology isolated"
 				(at 0 0 0)
 				(effects
 					(font
@@ -511,7 +511,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "R?Array?SIP*"
+			(property "ki_fp_filters" "DIP* SOIC* R*Array*Concave* R*Array*Convex* MSOP*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -520,10 +520,21 @@
 					(hide yes)
 				)
 			)
-			(symbol "R_Network04_Split_0_1"
+			(symbol "R_Pack04_0_1"
 				(rectangle
-					(start 1.016 2.54)
-					(end -1.016 -2.54)
+					(start -6.35 -2.413)
+					(end 3.81 2.413)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -5.715 1.905)
+					(end -4.445 -1.905)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -532,10 +543,159 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy -5.08 1.905) (xy -5.08 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -2.54) (xy -5.08 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -3.175 1.905)
+					(end -1.905 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 1.905) (xy -2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -2.54) (xy -2.54 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -0.635 1.905)
+					(end 0.635 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.905) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.905 1.905)
+					(end 3.175 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.905) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_Pack04_1_1"
 				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "R1"
+					(at -5.08 5.08 270)
+					(length 2.54)
+					(name "R1.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 90)
+					(length 2.54)
+					(name "R1.1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -550,12 +710,28 @@
 						)
 					)
 				)
-			)
-			(symbol "R_Network04_Split_1_1"
 				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "R1.2"
+					(at -2.54 5.08 270)
+					(length 2.54)
+					(name "R2.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -5.08 90)
+					(length 2.54)
+					(name "R2.1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -570,12 +746,28 @@
 						)
 					)
 				)
-			)
-			(symbol "R_Network04_Split_2_1"
 				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "R2.2"
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "R3.2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "R3.1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -590,31 +782,9 @@
 						)
 					)
 				)
-			)
-			(symbol "R_Network04_Split_3_1"
 				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "R3.2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Network04_Split_4_1"
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
+					(at 2.54 5.08 270)
+					(length 2.54)
 					(name "R4.2"
 						(effects
 							(font
@@ -623,6 +793,24 @@
 						)
 					)
 					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "R4.1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1198,11 +1386,21 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "YC122-JR-0710KL\n"
+		(exclude_from_sim no)
+		(at 207.01 87.122 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c1ec4f7d-a3b1-493a-b817-4333ed6e2dcd")
+	)
 	(junction
-		(at 203.2 78.74)
+		(at 198.12 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "28354a4d-70f6-46cf-a353-c17d66a88736")
+		(uuid "1cac304e-cfa1-4f63-b1d9-36d1008f1cf2")
 	)
 	(junction
 		(at 43.18 85.09)
@@ -1235,10 +1433,10 @@
 		(uuid "7da5b50f-f528-4699-811d-1c1cb0e82368")
 	)
 	(junction
-		(at 203.2 86.36)
+		(at 198.12 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "96e253b4-c05c-40df-adde-abca7e757508")
+		(uuid "9c3e602e-d43c-453d-9df1-e66c254c84c4")
 	)
 	(junction
 		(at 96.52 50.8)
@@ -1259,8 +1457,8 @@
 		(uuid "3e4c4678-f4ae-46db-97c6-64cd95445c59")
 	)
 	(no_connect
-		(at 182.88 101.6)
-		(uuid "60a4fd00-e47c-4b47-9a7c-83e5822d3888")
+		(at 194.31 86.36)
+		(uuid "80e188e3-d6e9-4901-b104-99c09d610601")
 	)
 	(no_connect
 		(at 102.87 87.63)
@@ -1271,8 +1469,8 @@
 		(uuid "88c3d4e7-31fd-40bd-8ba2-e5fdfb56b7da")
 	)
 	(no_connect
-		(at 190.5 101.6)
-		(uuid "d0d7463e-bfef-4602-81e8-8736034e61bb")
+		(at 184.15 86.36)
+		(uuid "b1b4d4e1-2d34-438e-8d00-6711b6102b88")
 	)
 	(no_connect
 		(at 102.87 80.01)
@@ -1330,16 +1528,6 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 86.36) (xy 182.88 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1a133d75-ca71-44aa-825b-300899c2efba")
-	)
-	(wire
-		(pts
 			(xy 102.87 110.49) (xy 113.03 110.49)
 		)
 		(stroke
@@ -1350,23 +1538,13 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 78.74) (xy 203.2 86.36)
+			(xy 198.12 78.74) (xy 198.12 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "22e6f56d-7deb-4bca-b288-d1de627cea6d")
-	)
-	(wire
-		(pts
-			(xy 203.2 86.36) (xy 203.2 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2751f62d-e925-4ae2-a4d4-55bb8f075ae0")
+		(uuid "20ebc92d-3268-4141-af1c-8bb1514f6b57")
 	)
 	(wire
 		(pts
@@ -1400,7 +1578,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 66.04) (xy 203.2 78.74)
+			(xy 198.12 66.04) (xy 198.12 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1440,13 +1618,23 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 78.74) (xy 182.88 78.74)
+			(xy 170.18 78.74) (xy 184.15 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "422dace9-43fc-4184-a6bf-f0f7f0f2acac")
+	)
+	(wire
+		(pts
+			(xy 180.34 83.82) (xy 180.34 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "460e37a1-8dc1-47a3-a16a-622f6024f783")
 	)
 	(wire
 		(pts
@@ -1540,6 +1728,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 86.36) (xy 177.8 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cef5026-a2cc-45b1-9d4d-27f7e80c9ef2")
+	)
+	(wire
+		(pts
 			(xy 96.52 50.8) (xy 96.52 52.07)
 		)
 		(stroke
@@ -1547,16 +1745,6 @@
 			(type default)
 		)
 		(uuid "8849d077-2835-466b-83d7-c3a995430829")
-	)
-	(wire
-		(pts
-			(xy 203.2 93.98) (xy 190.5 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "888d78c2-ee7c-4d50-ae06-608ee3e8bd1c")
 	)
 	(wire
 		(pts
@@ -1610,13 +1798,23 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 86.36) (xy 203.2 86.36)
+			(xy 180.34 93.98) (xy 170.18 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "af2edf69-ed86-4256-a5ba-2e1ddbf29a4d")
+		(uuid "b0376b14-0e21-446e-93f6-f4a86e73f876")
+	)
+	(wire
+		(pts
+			(xy 177.8 81.28) (xy 184.15 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1b04246-b2ce-4c92-abbd-6f7a093947f9")
 	)
 	(wire
 		(pts
@@ -1627,16 +1825,6 @@
 			(type default)
 		)
 		(uuid "c349c4e2-ee7a-4720-ac7e-394f98d9c195")
-	)
-	(wire
-		(pts
-			(xy 182.88 93.98) (xy 170.18 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c43421e5-dbf0-49cc-96af-fc863aa3d5ef")
 	)
 	(wire
 		(pts
@@ -1660,6 +1848,26 @@
 	)
 	(wire
 		(pts
+			(xy 170.18 86.36) (xy 177.8 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8da4a34-da84-479d-aba5-372f4b2e6d21")
+	)
+	(wire
+		(pts
+			(xy 198.12 81.28) (xy 198.12 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd0a02ad-3433-4dcd-b8e2-58d1e5aac10f")
+	)
+	(wire
+		(pts
 			(xy 162.56 93.98) (xy 157.48 93.98)
 		)
 		(stroke
@@ -1667,6 +1875,16 @@
 			(type default)
 		)
 		(uuid "e2f4e862-76c3-40d3-abea-e871217a3451")
+	)
+	(wire
+		(pts
+			(xy 194.31 83.82) (xy 198.12 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4f1ee83-5d29-43d3-b131-b160b7ec7cf5")
 	)
 	(wire
 		(pts
@@ -1680,7 +1898,27 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 78.74) (xy 203.2 78.74)
+			(xy 194.31 81.28) (xy 198.12 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb6e446f-f1f0-4e4f-ba24-cdec0672a883")
+	)
+	(wire
+		(pts
+			(xy 184.15 83.82) (xy 180.34 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee58247e-e93e-4049-b581-08e2dd9455ce")
+	)
+	(wire
+		(pts
+			(xy 194.31 78.74) (xy 198.12 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1719,7 +1957,7 @@
 		(uuid "05b3ae1c-3931-4390-a363-8957e8275e09")
 	)
 	(label "Vin"
-		(at 203.2 66.04 0)
+		(at 198.12 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1836,91 +2074,6 @@
 		(uuid "ef126e1d-cf2e-496d-bbe9-26d0b58e40e1")
 	)
 	(symbol
-		(lib_id "Device:R_Network04_Split")
-		(at 186.69 101.6 90)
-		(unit 4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "14966c02-b772-49ed-9705-d6814c77b9bd")
-		(property "Reference" "RN1"
-			(at 183.896 98.806 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1k 5%"
-			(at 190.754 98.806 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 186.69 103.632 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.vishay.com/docs/31509/csc.pdf"
-			(at 186.69 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, star topology, bussed resistors, split"
-			(at 186.69 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Package " "0402"
-			(at 186.69 101.6 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3db0ff98-ffba-46ff-8705-90738de0a301")
-		)
-		(pin "5"
-			(uuid "6f1191c3-db51-44cb-b797-a185910b0331")
-		)
-		(pin "2"
-			(uuid "43136375-cd0b-4755-8487-39cb251fe0f7")
-		)
-		(pin "3"
-			(uuid "9f8219e4-41ee-4942-bd00-8673ad9ab8fb")
-		)
-		(pin "4"
-			(uuid "b1d21eb3-6777-4f66-8343-3a6306ecb164")
-		)
-		(instances
-			(project ""
-				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e/a7daddd0-f6f1-44fc-b4f4-22ebb310941e"
-					(reference "RN1")
-					(unit 4)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 114.3 64.77 0)
 		(unit 1)
@@ -1980,6 +2133,92 @@
 			(project "ModbusPlug_Circuit"
 				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e/a7daddd0-f6f1-44fc-b4f4-22ebb310941e"
 					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Pack04")
+		(at 189.23 81.28 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2dff664e-a009-458b-b33c-85facfb23b18")
+		(property "Reference" "RN2"
+			(at 189.23 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R_Pack04"
+			(at 189.23 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
+			(at 189.23 74.295 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 189.23 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "4 resistor network, parallel topology"
+			(at 189.23 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "eb4bdb58-6c4f-4b7a-9aba-49bb6f19e75b")
+		)
+		(pin "7"
+			(uuid "105045bb-5c27-4807-b3db-38bdb527dc2f")
+		)
+		(pin "1"
+			(uuid "1faff888-a5bd-407b-a21e-2fc8142fa44c")
+		)
+		(pin "6"
+			(uuid "943eae88-22a9-452d-be06-54527bf3a288")
+		)
+		(pin "5"
+			(uuid "c7f93276-65d2-4e58-ad91-193f601e9691")
+		)
+		(pin "4"
+			(uuid "0dd9bec5-e50a-4f70-b507-66642465a271")
+		)
+		(pin "3"
+			(uuid "4d254a9b-e3c1-401c-b1ab-adbf4fc2bcee")
+		)
+		(pin "2"
+			(uuid "c5a0a49c-1b73-4a2a-9556-48719eecc97a")
+		)
+		(instances
+			(project ""
+				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e/a7daddd0-f6f1-44fc-b4f4-22ebb310941e"
+					(reference "RN2")
 					(unit 1)
 				)
 			)
@@ -2219,91 +2458,6 @@
 				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e/a7daddd0-f6f1-44fc-b4f4-22ebb310941e"
 					(reference "R3")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Network04_Split")
-		(at 186.69 86.36 90)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7e59e710-b5ad-4992-9916-320a01afddb8")
-		(property "Reference" "RN1"
-			(at 183.642 83.566 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1k 5%"
-			(at 190.246 83.566 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 186.69 88.392 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.vishay.com/docs/31509/csc.pdf"
-			(at 186.69 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, star topology, bussed resistors, split"
-			(at 186.69 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Package " "0402"
-			(at 186.69 86.36 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3db0ff98-ffba-46ff-8705-90738de0a301")
-		)
-		(pin "5"
-			(uuid "6f1191c3-db51-44cb-b797-a185910b0331")
-		)
-		(pin "2"
-			(uuid "43136375-cd0b-4755-8487-39cb251fe0f7")
-		)
-		(pin "3"
-			(uuid "9f8219e4-41ee-4942-bd00-8673ad9ab8fb")
-		)
-		(pin "4"
-			(uuid "b1d21eb3-6777-4f66-8343-3a6306ecb164")
-		)
-		(instances
-			(project ""
-				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e/a7daddd0-f6f1-44fc-b4f4-22ebb310941e"
-					(reference "RN1")
-					(unit 2)
 				)
 			)
 		)
@@ -2697,91 +2851,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Network04_Split")
-		(at 186.69 93.98 90)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a3466eec-0ee0-4cd8-acb4-b4646c32f767")
-		(property "Reference" "RN1"
-			(at 183.642 91.186 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1k 5%"
-			(at 190.5 91.186 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 186.69 96.012 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.vishay.com/docs/31509/csc.pdf"
-			(at 186.69 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, star topology, bussed resistors, split"
-			(at 186.69 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Package " "0402"
-			(at 186.69 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3db0ff98-ffba-46ff-8705-90738de0a301")
-		)
-		(pin "5"
-			(uuid "6f1191c3-db51-44cb-b797-a185910b0331")
-		)
-		(pin "2"
-			(uuid "43136375-cd0b-4755-8487-39cb251fe0f7")
-		)
-		(pin "3"
-			(uuid "9f8219e4-41ee-4942-bd00-8673ad9ab8fb")
-		)
-		(pin "4"
-			(uuid "b1d21eb3-6777-4f66-8343-3a6306ecb164")
-		)
-		(instances
-			(project ""
-				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e/a7daddd0-f6f1-44fc-b4f4-22ebb310941e"
-					(reference "RN1")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 90.17 127 0)
 		(unit 1)
@@ -2842,91 +2911,6 @@
 			(project ""
 				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e/a7daddd0-f6f1-44fc-b4f4-22ebb310941e"
 					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Network04_Split")
-		(at 186.69 78.74 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c01fdab5-aadb-4ad0-aba6-74ab0273e222")
-		(property "Reference" "RN1"
-			(at 183.642 75.946 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1k 5%"
-			(at 190.246 75.946 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 186.69 80.772 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.vishay.com/docs/31509/csc.pdf"
-			(at 186.69 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, star topology, bussed resistors, split"
-			(at 186.69 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Package " "0402"
-			(at 186.69 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3db0ff98-ffba-46ff-8705-90738de0a301")
-		)
-		(pin "5"
-			(uuid "6f1191c3-db51-44cb-b797-a185910b0331")
-		)
-		(pin "2"
-			(uuid "43136375-cd0b-4755-8487-39cb251fe0f7")
-		)
-		(pin "3"
-			(uuid "9f8219e4-41ee-4942-bd00-8673ad9ab8fb")
-		)
-		(pin "4"
-			(uuid "b1d21eb3-6777-4f66-8343-3a6306ecb164")
-		)
-		(instances
-			(project ""
-				(path "/fd9cd8db-e183-481d-a9fb-02d7f841de3e/a7daddd0-f6f1-44fc-b4f4-22ebb310941e"
-					(reference "RN1")
 					(unit 1)
 				)
 			)
