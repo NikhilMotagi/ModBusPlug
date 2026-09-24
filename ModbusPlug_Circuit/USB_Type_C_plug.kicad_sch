@@ -2030,7 +2030,7 @@
 	)
 	(wire
 		(pts
-			(xy 196.85 53.34) (xy 221.615 53.34)
+			(xy 196.85 53.34) (xy 220.98 53.34)
 		)
 		(stroke
 			(width 0)
@@ -2228,7 +2228,7 @@
 		)
 		(uuid "0b8ced18-2e55-446d-b2ea-d1814ab346d3")
 	)
-	(label "VBUS"
+	(label "VBUS_out"
 		(at 100.33 60.96 180)
 		(effects
 			(font
@@ -2238,7 +2238,7 @@
 		)
 		(uuid "a6fd48f5-455a-46ba-88ec-1cd5eb9f4982")
 	)
-	(label "VBUS"
+	(label "VBUS_out"
 		(at 152.4 53.34 0)
 		(effects
 			(font
@@ -2269,17 +2269,6 @@
 		)
 		(uuid "0f2a4e6f-9c3a-41d7-8557-0afdc657c9c0")
 	)
-	(hierarchical_label "VDD"
-		(shape output)
-		(at 221.615 53.34 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "36e82af2-fce8-45b7-9846-a6baab726b89")
-	)
 	(hierarchical_label "USB_D+"
 		(shape bidirectional)
 		(at 111.76 71.12 0)
@@ -2291,7 +2280,7 @@
 		)
 		(uuid "397eec5b-f56c-4318-b27f-a4d17f02d453")
 	)
-	(hierarchical_label "VBUS"
+	(hierarchical_label "VBUS_out"
 		(shape output)
 		(at 127 53.34 0)
 		(effects
@@ -2301,6 +2290,17 @@
 			(justify left)
 		)
 		(uuid "e99e8c4e-09d7-4283-ac5f-1d928bf1c766")
+	)
+	(hierarchical_label "3.3V_out"
+		(shape output)
+		(at 220.98 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fdd341f8-3e20-40b5-b220-a9ba9a4760b3")
 	)
 	(symbol
 		(lib_id "Connector:USB_C_Plug")

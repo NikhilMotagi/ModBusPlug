@@ -9,6 +9,8 @@
 	(paper "A4")
 	(layers
 		(0 "F.Cu" signal)
+		(4 "In1.Cu" signal)
+		(6 "In2.Cu" signal)
 		(2 "B.Cu" signal)
 		(9 "F.Adhes" user "F.Adhesive")
 		(11 "B.Adhes" user "B.Adhesive")
@@ -37,12 +39,14 @@
 		(stackup
 			(layer "F.SilkS"
 				(type "Top Silk Screen")
+				(color "White")
 			)
 			(layer "F.Paste"
 				(type "Top Solder Paste")
 			)
 			(layer "F.Mask"
 				(type "Top Solder Mask")
+				(color "Black")
 				(thickness 0.01)
 			)
 			(layer "F.Cu"
@@ -50,8 +54,33 @@
 				(thickness 0.035)
 			)
 			(layer "dielectric 1"
+				(type "prepreg")
+				(color "FR4 natural")
+				(thickness 0.1)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 2"
 				(type "core")
-				(thickness 0.91)
+				(color "FR4 natural")
+				(thickness 0.64)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 3"
+				(type "prepreg")
+				(color "FR4 natural")
+				(thickness 0.1)
 				(material "FR4")
 				(epsilon_r 4.5)
 				(loss_tangent 0.02)
@@ -62,6 +91,7 @@
 			)
 			(layer "B.Mask"
 				(type "Bottom Solder Mask")
+				(color "Black")
 				(thickness 0.01)
 			)
 			(layer "B.Paste"
@@ -69,6 +99,7 @@
 			)
 			(layer "B.SilkS"
 				(type "Bottom Silk Screen")
+				(color "White")
 			)
 			(copper_finish "HAL SnPb")
 			(dielectric_constraints no)
@@ -119,14 +150,14 @@
 		)
 	)
 	(net 0 "")
-	(net 1 "/USB To UART/Vin")
+	(net 1 "/USB Type C & Power/VBUS_out")
 	(net 2 "Net-(D1-A)")
 	(net 3 "Net-(D2-A)")
 	(net 4 "/USB To UART/TXT")
-	(net 5 "unconnected-(C5-Pad1)")
-	(net 6 "unconnected-(C5-Pad2)")
-	(net 7 "unconnected-(C6-Pad1)")
-	(net 8 "unconnected-(C6-Pad2)")
+	(net 5 "+3.3V")
+	(net 6 "/Modbus_Transciever/A+")
+	(net 7 "/Modbus_Transciever/B-")
+	(net 8 "/Modbus_Transciever/RS485_R")
 	(net 9 "Net-(D3-A)")
 	(net 10 "/USB To UART/RXT")
 	(net 11 "/USB To UART/Din_+")
@@ -148,33 +179,235 @@
 	(net 27 "unconnected-(P1-SBU1-PadA8)")
 	(net 28 "Net-(U2-VBUS)")
 	(net 29 "unconnected-(RN2-R1.1-Pad1)")
-	(net 30 "/USB To UART/UART_TX")
-	(net 31 "/USB To UART/RS485_DE")
-	(net 32 "/USB To UART/UART_RX")
-	(net 33 "unconnected-(R6-Pad2)")
-	(net 34 "unconnected-(R6-Pad1)")
-	(net 35 "unconnected-(R7-Pad1)")
-	(net 36 "unconnected-(R7-Pad2)")
-	(net 37 "unconnected-(U2-~{RTS}-Pad16)")
-	(net 38 "unconnected-(U2-~{SUSPEND}-Pad11)")
-	(net 39 "unconnected-(U2-CLK{slash}GPIO.0-Pad2)")
-	(net 40 "unconnected-(U2-~{WAKEUP}-Pad13)")
-	(net 41 "unconnected-(U2-SUSPEND-Pad14)")
-	(net 42 "unconnected-(U2-~{CTS}-Pad15)")
-	(net 43 "unconnected-(U2-NC-Pad10)")
-	(net 44 "unconnected-(U3-DE-Pad3)")
-	(net 45 "unconnected-(U3-~{RE}-Pad2)")
-	(net 46 "unconnected-(U3-B-Pad7)")
-	(net 47 "unconnected-(U3-A-Pad6)")
-	(net 48 "/USB Type C & Power/VBUS")
-	(net 49 "Net-(P1-CC)")
-	(net 50 "unconnected-(RN2-R1.2-Pad8)")
-	(net 51 "unconnected-(R5-Pad1)")
-	(net 52 "/USB Type C & Power/D+")
-	(net 53 "/USB Type C & Power/D-")
-	(net 54 "Net-(U3-R)")
-	(net 55 "unconnected-(R8-Pad1)")
-	(net 56 "Net-(U3-D)")
+	(net 30 "Net-(RN1B-R2.1)")
+	(net 31 "Net-(U3-B)")
+	(net 32 "Net-(U3-A)")
+	(net 33 "/Modbus_Transciever/RS485_D")
+	(net 34 "unconnected-(U2-~{RTS}-Pad16)")
+	(net 35 "unconnected-(U2-~{SUSPEND}-Pad11)")
+	(net 36 "unconnected-(U2-CLK{slash}GPIO.0-Pad2)")
+	(net 37 "unconnected-(U2-~{WAKEUP}-Pad13)")
+	(net 38 "unconnected-(U2-SUSPEND-Pad14)")
+	(net 39 "unconnected-(U2-~{CTS}-Pad15)")
+	(net 40 "unconnected-(U2-NC-Pad10)")
+	(net 41 "/Modbus_Transciever/RS485_DE")
+	(net 42 "Net-(P1-CC)")
+	(net 43 "unconnected-(RN2-R1.2-Pad8)")
+	(net 44 "/USB Type C & Power/D+")
+	(net 45 "/USB Type C & Power/D-")
+	(net 46 "Net-(U3-D)")
+	(footprint "Resistor_SMD:R_0402_1005Metric"
+		(layer "F.Cu")
+		(uuid "0a300792-f456-49b0-a281-80eef2787f2b")
+		(at 131.0125 81.6125 180)
+		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
+		(tags "resistor")
+		(property "Reference" "R9"
+			(at 0 -1.17 0)
+			(layer "F.SilkS")
+			(uuid "a86dd414-9ccd-4a88-a584-a05aa7d7cec8")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "120R 1%"
+			(at 0 1.17 0)
+			(layer "F.Fab")
+			(uuid "c6e873cf-381b-4fa6-a3c9-e39cac6c1fcb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "571bc1b0-118a-4c05-8670-04bc961792e2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7ad7a435-b67b-4ef8-abe0-1418761ef7c5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0402"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "75fff8c3-4ed8-4b83-bf5f-b2148cc8f7cc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "R_*")
+		(path "/4af16e81-54d5-42f7-bc81-ac15fb5625fb/b7550e55-246a-4540-b86f-c117fb5f9ba3")
+		(sheetname "/Modbus_Transciever/")
+		(sheetfile "SN65HVD75DRBR_ModbusTransciever.kicad_sch")
+		(attr smd)
+		(fp_line
+			(start -0.153641 0.38)
+			(end 0.153641 0.38)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9ef6ac17-3e26-4256-8f43-ece9d54759d2")
+		)
+		(fp_line
+			(start -0.153641 -0.38)
+			(end 0.153641 -0.38)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "799b7792-07d8-4262-b121-ffb303903753")
+		)
+		(fp_line
+			(start 0.93 0.47)
+			(end -0.93 0.47)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "54f863d7-4742-4e8f-ba70-ac78c1e6975e")
+		)
+		(fp_line
+			(start 0.93 -0.47)
+			(end 0.93 0.47)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "25d589b4-e364-429f-8ca2-66ef12587298")
+		)
+		(fp_line
+			(start -0.93 0.47)
+			(end -0.93 -0.47)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "161eba4e-f9da-4190-b144-f95338eca1ae")
+		)
+		(fp_line
+			(start -0.93 -0.47)
+			(end 0.93 -0.47)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "31deff80-c2ba-404f-88b1-61b7a0b8c058")
+		)
+		(fp_line
+			(start 0.525 0.27)
+			(end -0.525 0.27)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "cde63811-7a5f-40a8-b11c-16a953880794")
+		)
+		(fp_line
+			(start 0.525 -0.27)
+			(end 0.525 0.27)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "4c63d54a-df6c-4cf2-8c89-ac6bae4b5527")
+		)
+		(fp_line
+			(start -0.525 0.27)
+			(end -0.525 -0.27)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "9c706e88-87b5-4446-9b77-ba8d4a403bf1")
+		)
+		(fp_line
+			(start -0.525 -0.27)
+			(end 0.525 -0.27)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "42566535-6607-488d-bac3-7e9aec32def6")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "6754ce72-f35a-4bfa-9fca-1733c0b7e38a")
+			(effects
+				(font
+					(size 0.26 0.26)
+					(thickness 0.04)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -0.51 0 180)
+			(size 0.54 0.64)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 7 "/Modbus_Transciever/B-")
+			(pintype "passive")
+			(uuid "79acab6b-7081-4d89-a109-01bf8fb73945")
+		)
+		(pad "2" smd roundrect
+			(at 0.51 0 180)
+			(size 0.54 0.64)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 6 "/Modbus_Transciever/A+")
+			(pintype "passive")
+			(uuid "4178c34b-91d7-4b00-a86d-02bbce877807")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "LED_SMD:LED_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "0ed4ebcb-28f8-4a81-ba6a-4710b205d8ac")
@@ -187,7 +420,7 @@
 			(uuid "04bd646b-9f0b-4adc-b81d-a029c8f07ecb")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -425,7 +658,7 @@
 			(uuid "683e182e-920c-4439-9a2b-45c2b157b5a5")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -599,7 +832,7 @@
 			(size 0.56 0.62)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pintype "passive")
 			(uuid "6e1999b9-bf2d-4ae2-b10d-4f6d2ec842d8")
 		)
@@ -637,7 +870,7 @@
 			(uuid "f4b953a6-b70a-4179-bbcb-346e733d3562")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -837,6 +1070,238 @@
 			)
 		)
 	)
+	(footprint "Resistor_SMD:R_Array_Convex_2x0402"
+		(layer "F.Cu")
+		(uuid "488278b9-2afc-4229-b74c-5484dbb51c2e")
+		(at 143.025 76.3)
+		(descr "Chip Resistor Network, ROHM MNR02 (see mnr_g.pdf)")
+		(tags "resistor array")
+		(property "Reference" "RN1"
+			(at 0 -1.75 0)
+			(layer "F.SilkS")
+			(uuid "ac36ce52-84c7-4488-94ad-fccf0a69cb84")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "10k 5%"
+			(at 0 1.8 0)
+			(layer "F.Fab")
+			(uuid "dcde3de5-1e5e-44f9-9ee6-97d5215fb73b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ac49ad93-5a11-4c2c-93c1-acae38638d5b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "2 resistor network, parallel topology, split"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4c3f69ec-95ff-4930-b740-4e4c454b7ca7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "2x0402"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "69e0338f-1b81-4cb4-be1d-3ac79d3b97b9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "DIP* SOIC* R*Array*Concave* R*Array*Convex*")
+		(path "/4af16e81-54d5-42f7-bc81-ac15fb5625fb/ad4cdb6a-2a71-4673-98b4-dc627c93195e")
+		(sheetname "/Modbus_Transciever/")
+		(sheetfile "SN65HVD75DRBR_ModbusTransciever.kicad_sch")
+		(attr smd)
+		(fp_line
+			(start 0.25 -0.78)
+			(end -0.25 -0.78)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "b89a1dbc-c2a9-48a6-8c87-fd64358cf7a1")
+		)
+		(fp_line
+			(start 0.25 0.78)
+			(end -0.25 0.78)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e9721fa1-eae1-4cae-8b12-0843b4ff665d")
+		)
+		(fp_line
+			(start -1 -0.95)
+			(end -1 0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "808cfa51-ec18-4b97-9e20-8a91c6a74093")
+		)
+		(fp_line
+			(start -1 -0.95)
+			(end 1 -0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "2b6beb08-9531-429c-a25f-3a29d14c188a")
+		)
+		(fp_line
+			(start 1 0.95)
+			(end -1 0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "c3b84a8c-70d6-44b1-bb1d-2431a9c6f43a")
+		)
+		(fp_line
+			(start 1 0.95)
+			(end 1 -0.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "d95e6c8b-7701-46c8-8a2e-73092546535d")
+		)
+		(fp_line
+			(start -0.5 -0.7)
+			(end -0.5 0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "2b56d2b6-bb0c-44f3-af5e-0eaadd80ab79")
+		)
+		(fp_line
+			(start -0.5 0.7)
+			(end 0.5 0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "c8a835e7-58f7-4573-9dc9-0e619341aecf")
+		)
+		(fp_line
+			(start 0.5 -0.7)
+			(end -0.5 -0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "f2744599-0c80-446b-863a-a30cd50b03b4")
+		)
+		(fp_line
+			(start 0.5 0.7)
+			(end 0.5 -0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "f6b9b7b3-d27e-4504-addb-fbd435123fa2")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.75 0)
+			(layer "F.Fab")
+			(uuid "514517ab-55cc-4a07-ab80-03bf72a43aaa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd rect
+			(at -0.5 -0.35)
+			(size 0.5 0.4)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 19 "GND")
+			(pinfunction "R1.1")
+			(pintype "passive")
+			(uuid "8f9b32f9-740d-4e30-9411-8d115eecaa01")
+		)
+		(pad "2" smd rect
+			(at -0.5 0.35)
+			(size 0.5 0.4)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 30 "Net-(RN1B-R2.1)")
+			(pinfunction "R2.1")
+			(pintype "passive")
+			(uuid "2aa7927b-1d57-4900-8349-0d4a02221e39")
+		)
+		(pad "3" smd rect
+			(at 0.5 0.35)
+			(size 0.5 0.4)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 5 "+3.3V")
+			(pinfunction "R2.2")
+			(pintype "passive")
+			(uuid "76e60e2b-51a0-4456-a3fd-d6cd341fd76c")
+		)
+		(pad "4" smd rect
+			(at 0.5 -0.35)
+			(size 0.5 0.4)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net 41 "/Modbus_Transciever/RS485_DE")
+			(pinfunction "R1.2")
+			(pintype "passive")
+			(uuid "83404f0a-3f7c-448f-a8d2-7d39c868e9a3")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_Array_Convex_2x0402.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Package_TO_SOT_SMD:SOT-23-6"
 		(layer "F.Cu")
 		(uuid "5a563075-7919-4161-b2cf-02cfc8f673bc")
@@ -849,7 +1314,7 @@
 			(uuid "2dde9eff-c2d0-4aae-8e69-34d6b135dfee")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -1023,7 +1488,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 53 "/USB Type C & Power/D-")
+			(net 45 "/USB Type C & Power/D-")
 			(pinfunction "I/O1")
 			(pintype "passive")
 			(uuid "429ad3cc-a29b-4d6c-a346-33b32037cb62")
@@ -1043,7 +1508,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 52 "/USB Type C & Power/D+")
+			(net 44 "/USB Type C & Power/D+")
 			(pinfunction "I/O2")
 			(pintype "passive")
 			(uuid "22241f1e-4989-4b14-8dc9-9b2a2219bf7b")
@@ -1063,7 +1528,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 48 "/USB Type C & Power/VBUS")
+			(net 1 "/USB Type C & Power/VBUS_out")
 			(pinfunction "VBUS")
 			(pintype "passive")
 			(uuid "ea9bf282-7889-4f86-871c-6acd6ac6f0b4")
@@ -1101,7 +1566,7 @@
 			(uuid "34987917-f9aa-4219-9943-82b9da294114")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -1650,7 +2115,7 @@
 			(at 1.375 -0.75 180)
 			(size 0.3 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 48 "/USB Type C & Power/VBUS")
+			(net 1 "/USB Type C & Power/VBUS_out")
 			(pinfunction "VBUS")
 			(pintype "passive")
 			(solder_mask_margin 0)
@@ -1660,7 +2125,7 @@
 			(at 0.875 -0.75 180)
 			(size 0.3 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 49 "Net-(P1-CC)")
+			(net 42 "Net-(P1-CC)")
 			(pinfunction "CC")
 			(pintype "bidirectional")
 			(solder_mask_margin 0)
@@ -1670,7 +2135,7 @@
 			(at 0.375 -0.75 180)
 			(size 0.3 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 52 "/USB Type C & Power/D+")
+			(net 44 "/USB Type C & Power/D+")
 			(pinfunction "D+")
 			(pintype "bidirectional")
 			(solder_mask_margin 0)
@@ -1680,7 +2145,7 @@
 			(at -0.125 -0.75 180)
 			(size 0.3 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 53 "/USB Type C & Power/D-")
+			(net 45 "/USB Type C & Power/D-")
 			(pinfunction "D-")
 			(pintype "bidirectional")
 			(solder_mask_margin 0)
@@ -1700,7 +2165,7 @@
 			(at -1.125 -0.75 180)
 			(size 0.3 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 48 "/USB Type C & Power/VBUS")
+			(net 1 "/USB Type C & Power/VBUS_out")
 			(pinfunction "VBUS")
 			(pintype "passive")
 			(solder_mask_margin 0)
@@ -1770,7 +2235,7 @@
 			(at -1.375 0.75 180)
 			(size 0.3 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 48 "/USB Type C & Power/VBUS")
+			(net 1 "/USB Type C & Power/VBUS_out")
 			(pinfunction "VBUS")
 			(pintype "passive")
 			(solder_mask_margin 0)
@@ -1790,7 +2255,7 @@
 			(at -0.375 0.75 180)
 			(size 0.3 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 52 "/USB Type C & Power/D+")
+			(net 44 "/USB Type C & Power/D+")
 			(pinfunction "D+")
 			(pintype "bidirectional")
 			(solder_mask_margin 0)
@@ -1800,7 +2265,7 @@
 			(at 0.125 0.75 180)
 			(size 0.3 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 53 "/USB Type C & Power/D-")
+			(net 45 "/USB Type C & Power/D-")
 			(pinfunction "D-")
 			(pintype "bidirectional")
 			(solder_mask_margin 0)
@@ -1820,7 +2285,7 @@
 			(at 1.125 0.75 180)
 			(size 0.3 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 48 "/USB Type C & Power/VBUS")
+			(net 1 "/USB Type C & Power/VBUS_out")
 			(pinfunction "VBUS")
 			(pintype "passive")
 			(solder_mask_margin 0)
@@ -1973,7 +2438,7 @@
 			(uuid "139fb1ac-0fda-44b6-b8b3-c32b26f0c9a5")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -2147,7 +2612,7 @@
 			(size 0.56 0.62)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pintype "passive")
 			(uuid "5acd5d46-0e61-43af-85ea-9ee105cada76")
 		)
@@ -2176,22 +2641,22 @@
 	(footprint "Resistor_SMD:R_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "77fa1812-c981-4446-b968-5370095167e7")
-		(at 152.24 82.86)
+		(at 132.3125 81.1125 -90)
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R6"
-			(at 0 -1.17 0)
+			(at 0 -1.17 90)
 			(layer "F.SilkS")
 			(uuid "e66f5007-20bf-426c-9e16-956ca6714e28")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "10R 1%"
-			(at 0 1.17 0)
+			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "33f2b7e4-a397-4bfc-8ddf-7567c0727a95")
 			(effects
@@ -2202,7 +2667,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "eb04cea3-c74a-40f8-b7eb-dae4d9e54c7d")
@@ -2214,7 +2679,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c0d07a9f-1c66-4adf-9707-b58cd6d96634")
@@ -2226,7 +2691,7 @@
 			)
 		)
 		(property "Package" "0402"
-			(at 0 0 0)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -2244,16 +2709,6 @@
 		(sheetfile "SN65HVD75DRBR_ModbusTransciever.kicad_sch")
 		(attr smd)
 		(fp_line
-			(start -0.153641 -0.38)
-			(end 0.153641 -0.38)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "f9d31031-87b0-43ab-a868-97ef7b8e7357")
-		)
-		(fp_line
 			(start -0.153641 0.38)
 			(end 0.153641 0.38)
 			(stroke
@@ -2264,14 +2719,14 @@
 			(uuid "8510372f-fb2b-4cf3-82df-6f70f0e1f801")
 		)
 		(fp_line
-			(start -0.93 -0.47)
-			(end 0.93 -0.47)
+			(start -0.153641 -0.38)
+			(end 0.153641 -0.38)
 			(stroke
-				(width 0.05)
+				(width 0.12)
 				(type solid)
 			)
-			(layer "F.CrtYd")
-			(uuid "ec523ec3-3299-42f3-9c51-857504987c2b")
+			(layer "F.SilkS")
+			(uuid "f9d31031-87b0-43ab-a868-97ef7b8e7357")
 		)
 		(fp_line
 			(start -0.93 0.47)
@@ -2284,16 +2739,6 @@
 			(uuid "6fbfed41-58b3-4a66-9426-0b1c89902f2d")
 		)
 		(fp_line
-			(start 0.93 -0.47)
-			(end 0.93 0.47)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "c1279558-b5da-47f5-8a19-e4a5cd0674ec")
-		)
-		(fp_line
 			(start 0.93 0.47)
 			(end -0.93 0.47)
 			(stroke
@@ -2304,14 +2749,24 @@
 			(uuid "f40f9806-83f3-41d2-8e81-c3e8d75b392d")
 		)
 		(fp_line
-			(start -0.525 -0.27)
-			(end 0.525 -0.27)
+			(start -0.93 -0.47)
+			(end 0.93 -0.47)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "F.Fab")
-			(uuid "4df322ce-0c3b-4265-b443-f3302a9f1890")
+			(layer "F.CrtYd")
+			(uuid "ec523ec3-3299-42f3-9c51-857504987c2b")
+		)
+		(fp_line
+			(start 0.93 -0.47)
+			(end 0.93 0.47)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "c1279558-b5da-47f5-8a19-e4a5cd0674ec")
 		)
 		(fp_line
 			(start -0.525 0.27)
@@ -2324,16 +2779,6 @@
 			(uuid "e924dd7c-6453-4e4f-aa6f-241544c9f2b7")
 		)
 		(fp_line
-			(start 0.525 -0.27)
-			(end 0.525 0.27)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "58135741-47fa-4998-be6c-92319e47fccc")
-		)
-		(fp_line
 			(start 0.525 0.27)
 			(end -0.525 0.27)
 			(stroke
@@ -2343,8 +2788,28 @@
 			(layer "F.Fab")
 			(uuid "e872003f-4ef2-47e3-9791-8ae48ed5ab2d")
 		)
+		(fp_line
+			(start -0.525 -0.27)
+			(end 0.525 -0.27)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "4df322ce-0c3b-4265-b443-f3302a9f1890")
+		)
+		(fp_line
+			(start 0.525 -0.27)
+			(end 0.525 0.27)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "58135741-47fa-4998-be6c-92319e47fccc")
+		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "4ebb73b5-0e1d-46e9-8d15-7823ece82987")
 			(effects
@@ -2355,25 +2820,249 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.51 0)
+			(at -0.51 0 270)
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 34 "unconnected-(R6-Pad1)")
+			(net 31 "Net-(U3-B)")
 			(pintype "passive")
 			(uuid "ae84ff49-7d63-4442-9eef-346653823549")
 		)
 		(pad "2" smd roundrect
-			(at 0.51 0)
+			(at 0.51 0 270)
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 33 "unconnected-(R6-Pad2)")
+			(net 7 "/Modbus_Transciever/B-")
 			(pintype "passive")
 			(uuid "7606187d-920d-4a45-8594-bcbde61b561b")
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "Package_TO_SOT_SMD:SOT-23"
+		(layer "F.Cu")
+		(uuid "86e8607e-c0ee-4ee2-ab8d-4d1ecfadd4f8")
+		(at 131.025 86.35 90)
+		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236), generated with kicad-footprint-generator ipc_gullwing_generator.py")
+		(tags "SOT TO_SOT_SMD")
+		(property "Reference" "D4"
+			(at 0 -2.4 90)
+			(layer "F.SilkS")
+			(uuid "4495cca8-ac4f-4ff9-850c-30a52a29451d")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "SM712_SOT23"
+			(at 0 2.4 90)
+			(layer "F.Fab")
+			(uuid "71211e75-6219-48fa-8989-5c1b26b83b31")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sm712_datasheet.pdf.pdf"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7cb9734c-ee8a-417d-8e76-76b9d43fd60e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "7V/12V, 600W Asymmetrical TVS Diode Array, SOT-23"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e6c3cf62-535f-41c9-894a-605b3bfad8d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "SOT?23*")
+		(path "/4af16e81-54d5-42f7-bc81-ac15fb5625fb/a1ee4bc5-d0ce-4c91-9f78-4c8a59b086ec")
+		(sheetname "/Modbus_Transciever/")
+		(sheetfile "SN65HVD75DRBR_ModbusTransciever.kicad_sch")
+		(attr smd)
+		(fp_line
+			(start 0 -1.56)
+			(end 0.65 -1.56)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "f586210e-e933-42e4-9fa8-3279d421dbfd")
+		)
+		(fp_line
+			(start 0 -1.56)
+			(end -0.65 -1.56)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "7b5a017f-14bc-4e7a-b465-ea0a3110067f")
+		)
+		(fp_line
+			(start 0 1.56)
+			(end 0.65 1.56)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "4d333a59-5536-4856-a748-a25909027572")
+		)
+		(fp_line
+			(start 0 1.56)
+			(end -0.65 1.56)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "ae338050-fc67-4327-853a-ded158b432cd")
+		)
+		(fp_poly
+			(pts
+				(xy -1.1625 -1.51) (xy -1.4025 -1.84) (xy -0.9225 -1.84)
+			)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill yes)
+			(layer "F.SilkS")
+			(uuid "675347ae-1bf4-4991-8f56-17346aa673dc")
+		)
+		(fp_rect
+			(start -1.92 -1.7)
+			(end 1.92 1.7)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "6f82d964-86fb-4bbb-a67d-c3a62caa3a63")
+		)
+		(fp_line
+			(start 0.65 -1.45)
+			(end 0.65 1.45)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "5f570dbf-a43a-46d3-a20d-75ffbf7744a0")
+		)
+		(fp_line
+			(start -0.325 -1.45)
+			(end 0.65 -1.45)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "dac55a5e-2082-41da-a900-27dedec662ea")
+		)
+		(fp_line
+			(start -0.65 -1.125)
+			(end -0.325 -1.45)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "ba5c21e8-4db3-448a-af64-721f94c83fc4")
+		)
+		(fp_line
+			(start 0.65 1.45)
+			(end -0.65 1.45)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "a348fcef-8019-4437-b114-6008d28ab4fc")
+		)
+		(fp_line
+			(start -0.65 1.45)
+			(end -0.65 -1.125)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "79c72f01-a46e-4930-aa06-c9dca72e3ade")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(uuid "f1ca7028-74dc-44e8-938d-78ea9e99fa62")
+			(effects
+				(font
+					(size 0.32 0.32)
+					(thickness 0.05)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -0.9375 -0.95 90)
+			(size 1.475 0.6)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 6 "/Modbus_Transciever/A+")
+			(pinfunction "A1")
+			(pintype "passive")
+			(uuid "370237e6-eac6-4566-8d0c-6f4a728846fb")
+		)
+		(pad "2" smd roundrect
+			(at -0.9375 0.95 90)
+			(size 1.475 0.6)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 7 "/Modbus_Transciever/B-")
+			(pinfunction "A2")
+			(pintype "passive")
+			(uuid "d9ce9be5-f51f-4fe5-812a-4f564b31e987")
+		)
+		(pad "3" smd roundrect
+			(at 0.9375 0 90)
+			(size 1.475 0.6)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 19 "GND")
+			(pinfunction "common")
+			(pintype "input")
+			(uuid "299e9807-ca15-4e8a-ba5f-de284c34b577")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -2397,7 +3086,7 @@
 			(uuid "70454731-00ae-43bc-b2d4-8e3a33a15fc4")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -2571,7 +3260,7 @@
 			(size 0.56 0.62)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pintype "passive")
 			(uuid "924fabf5-d3dc-4fb8-a678-d7c4b0c1a467")
 		)
@@ -2600,22 +3289,22 @@
 	(footprint "Capacitor_SMD:C_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "8be3cea4-c764-4980-b4da-996990f77404")
-		(at 149.35 78.23)
+		(at 129.8125 83.2125 -90)
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C5"
-			(at 0 -1.16 0)
+			(at 0 -1.16 90)
 			(layer "F.SilkS")
 			(uuid "e7684729-76ec-49f9-835f-67e3c9a4f2a8")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
 		)
-		(property "Value" "1uF|16V"
-			(at 0 1.16 0)
+		(property "Value" "330pF|50V"
+			(at 0 1.16 90)
 			(layer "F.Fab")
 			(uuid "44b5e3a4-6921-4ce1-aa85-d3c9ecf30ed5")
 			(effects
@@ -2626,7 +3315,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ab39f5f4-c01b-47c0-ac34-6a972a834283")
@@ -2638,7 +3327,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "096963b0-978c-47d9-a9ab-f8021092e980")
@@ -2650,7 +3339,7 @@
 			)
 		)
 		(property "Package" "0402"
-			(at 0 0 0)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -2668,16 +3357,6 @@
 		(sheetfile "SN65HVD75DRBR_ModbusTransciever.kicad_sch")
 		(attr smd)
 		(fp_line
-			(start -0.107836 -0.36)
-			(end 0.107836 -0.36)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "ff85440f-1d83-46cf-87aa-a06be479db8f")
-		)
-		(fp_line
 			(start -0.107836 0.36)
 			(end 0.107836 0.36)
 			(stroke
@@ -2688,14 +3367,14 @@
 			(uuid "58d23c41-a23c-4ae4-bae1-6eb7f71bac5c")
 		)
 		(fp_line
-			(start -0.91 -0.46)
-			(end 0.91 -0.46)
+			(start -0.107836 -0.36)
+			(end 0.107836 -0.36)
 			(stroke
-				(width 0.05)
+				(width 0.12)
 				(type solid)
 			)
-			(layer "F.CrtYd")
-			(uuid "df2a3fac-f4b0-4322-8d71-c5fd65ff4690")
+			(layer "F.SilkS")
+			(uuid "ff85440f-1d83-46cf-87aa-a06be479db8f")
 		)
 		(fp_line
 			(start -0.91 0.46)
@@ -2708,16 +3387,6 @@
 			(uuid "322faeb8-f6f1-4ada-af2f-522aca8d2556")
 		)
 		(fp_line
-			(start 0.91 -0.46)
-			(end 0.91 0.46)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "2ff0efb7-1c16-4b2e-99fe-a57438b83924")
-		)
-		(fp_line
 			(start 0.91 0.46)
 			(end -0.91 0.46)
 			(stroke
@@ -2728,14 +3397,24 @@
 			(uuid "3185c94e-6caf-4ba6-bc38-07b541c21ef0")
 		)
 		(fp_line
-			(start -0.5 -0.25)
-			(end 0.5 -0.25)
+			(start -0.91 -0.46)
+			(end 0.91 -0.46)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "F.Fab")
-			(uuid "6a6fd545-b97d-4ff3-a10b-49ef0ac1125c")
+			(layer "F.CrtYd")
+			(uuid "df2a3fac-f4b0-4322-8d71-c5fd65ff4690")
+		)
+		(fp_line
+			(start 0.91 -0.46)
+			(end 0.91 0.46)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "2ff0efb7-1c16-4b2e-99fe-a57438b83924")
 		)
 		(fp_line
 			(start -0.5 0.25)
@@ -2748,16 +3427,6 @@
 			(uuid "5bfb240e-8b83-41e4-ac0c-a7faf8fb68ae")
 		)
 		(fp_line
-			(start 0.5 -0.25)
-			(end 0.5 0.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "1d534f4d-238e-45a2-b5d8-9f5bfd722f87")
-		)
-		(fp_line
 			(start 0.5 0.25)
 			(end -0.5 0.25)
 			(stroke
@@ -2767,8 +3436,28 @@
 			(layer "F.Fab")
 			(uuid "9d8c9075-6202-4205-b90e-3790a9ceac67")
 		)
+		(fp_line
+			(start -0.5 -0.25)
+			(end 0.5 -0.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6a6fd545-b97d-4ff3-a10b-49ef0ac1125c")
+		)
+		(fp_line
+			(start 0.5 -0.25)
+			(end 0.5 0.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "1d534f4d-238e-45a2-b5d8-9f5bfd722f87")
+		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "2040ac98-bd55-4c7c-a2a7-9130593a5e7d")
 			(effects
@@ -2779,20 +3468,20 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.48 0)
+			(at -0.48 0 270)
 			(size 0.56 0.62)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 5 "unconnected-(C5-Pad1)")
+			(net 6 "/Modbus_Transciever/A+")
 			(pintype "passive")
 			(uuid "7743bd14-cbb3-4ebb-a7c2-3d8bf0ae40eb")
 		)
 		(pad "2" smd roundrect
-			(at 0.48 0)
+			(at 0.48 0 270)
 			(size 0.56 0.62)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 6 "unconnected-(C5-Pad2)")
+			(net 19 "GND")
 			(pintype "passive")
 			(uuid "c553e63a-5cf4-4656-a95b-dc69a83a5aeb")
 		)
@@ -2821,12 +3510,12 @@
 			(uuid "1bfa35ea-b283-4a7b-aa23-ad7851ef2431")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
 		)
-		(property "Value" "22R"
+		(property "Value" "22R 1%"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "792176f8-31d7-45b7-b97b-c2981896f189")
@@ -2995,7 +3684,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 55 "unconnected-(R8-Pad1)")
+			(net 33 "/Modbus_Transciever/RS485_D")
 			(pintype "passive")
 			(uuid "35b4f20b-97a9-4b54-9e9d-09ff0ef72470")
 		)
@@ -3004,7 +3693,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 56 "Net-(U3-D)")
+			(net 46 "Net-(U3-D)")
 			(pintype "passive")
 			(uuid "ed4879fd-283b-4a51-8f98-70b265eb84ca")
 		)
@@ -3033,7 +3722,7 @@
 			(uuid "2febcf87-7e01-491f-a808-43f41724d5fc")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -3262,22 +3951,22 @@
 	(footprint "Resistor_SMD:R_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "b77707dc-49ec-43a5-ac06-f9dddd4d3907")
-		(at 152.24 84.85)
+		(at 129.8125 81.1125 -90)
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R7"
-			(at 0 -1.17 0)
+			(at 0 -1.17 90)
 			(layer "F.SilkS")
 			(uuid "934fa301-4e1e-4c09-a6e8-3ca8cc08b972")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "10R 1%"
-			(at 0 1.17 0)
+			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "568a1076-1e89-4999-a704-5861594d4e9c")
 			(effects
@@ -3288,7 +3977,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b78a0ade-fa6b-486c-a435-ef4db97759fd")
@@ -3300,7 +3989,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ffad6daf-c99a-4eac-b877-42762c9cb90e")
@@ -3312,7 +4001,7 @@
 			)
 		)
 		(property "Package" "0402"
-			(at 0 0 0)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3325,20 +4014,10 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
-		(path "/4af16e81-54d5-42f7-bc81-ac15fb5625fb/85d5fc71-14d4-4489-8270-4ab4dcd05173")
+		(path "/4af16e81-54d5-42f7-bc81-ac15fb5625fb/feb24918-07a7-4b10-8f45-1404a04485ee")
 		(sheetname "/Modbus_Transciever/")
 		(sheetfile "SN65HVD75DRBR_ModbusTransciever.kicad_sch")
 		(attr smd)
-		(fp_line
-			(start -0.153641 -0.38)
-			(end 0.153641 -0.38)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "f37c70de-0e03-47f1-b1cf-8c2bdec8dd54")
-		)
 		(fp_line
 			(start -0.153641 0.38)
 			(end 0.153641 0.38)
@@ -3350,14 +4029,14 @@
 			(uuid "3c53f855-22a2-4faf-bb2a-59fd7904a373")
 		)
 		(fp_line
-			(start -0.93 -0.47)
-			(end 0.93 -0.47)
+			(start -0.153641 -0.38)
+			(end 0.153641 -0.38)
 			(stroke
-				(width 0.05)
+				(width 0.12)
 				(type solid)
 			)
-			(layer "F.CrtYd")
-			(uuid "b8467e3a-4014-4259-979c-70eada709bc8")
+			(layer "F.SilkS")
+			(uuid "f37c70de-0e03-47f1-b1cf-8c2bdec8dd54")
 		)
 		(fp_line
 			(start -0.93 0.47)
@@ -3370,16 +4049,6 @@
 			(uuid "9298935f-5329-42c1-b9c0-54fab965a1ce")
 		)
 		(fp_line
-			(start 0.93 -0.47)
-			(end 0.93 0.47)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "9847782f-3ef9-4bc3-8dbb-438eda2256f5")
-		)
-		(fp_line
 			(start 0.93 0.47)
 			(end -0.93 0.47)
 			(stroke
@@ -3390,14 +4059,24 @@
 			(uuid "ea51973d-c83e-4c3a-95f6-8b13b58a1c54")
 		)
 		(fp_line
-			(start -0.525 -0.27)
-			(end 0.525 -0.27)
+			(start -0.93 -0.47)
+			(end 0.93 -0.47)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "F.Fab")
-			(uuid "f7b19e75-3924-4ad9-8c51-8369d0c10278")
+			(layer "F.CrtYd")
+			(uuid "b8467e3a-4014-4259-979c-70eada709bc8")
+		)
+		(fp_line
+			(start 0.93 -0.47)
+			(end 0.93 0.47)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "9847782f-3ef9-4bc3-8dbb-438eda2256f5")
 		)
 		(fp_line
 			(start -0.525 0.27)
@@ -3410,16 +4089,6 @@
 			(uuid "46e4857e-e6ca-4eed-bd2a-167f900fca6f")
 		)
 		(fp_line
-			(start 0.525 -0.27)
-			(end 0.525 0.27)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "28e0b67a-8093-495d-bfd4-e1ea63f24a57")
-		)
-		(fp_line
 			(start 0.525 0.27)
 			(end -0.525 0.27)
 			(stroke
@@ -3429,8 +4098,28 @@
 			(layer "F.Fab")
 			(uuid "1efb0e83-00d2-4251-aa2c-cebf7b068631")
 		)
+		(fp_line
+			(start -0.525 -0.27)
+			(end 0.525 -0.27)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "f7b19e75-3924-4ad9-8c51-8369d0c10278")
+		)
+		(fp_line
+			(start 0.525 -0.27)
+			(end 0.525 0.27)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "28e0b67a-8093-495d-bfd4-e1ea63f24a57")
+		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "12a10635-fa7a-4fd1-afa5-f23429694d9f")
 			(effects
@@ -3441,20 +4130,20 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.51 0)
+			(at -0.51 0 270)
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 35 "unconnected-(R7-Pad1)")
+			(net 32 "Net-(U3-A)")
 			(pintype "passive")
 			(uuid "11b1cdb3-6883-4f59-9048-f70270c3bbd7")
 		)
 		(pad "2" smd roundrect
-			(at 0.51 0)
+			(at 0.51 0 270)
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 36 "unconnected-(R7-Pad2)")
+			(net 6 "/Modbus_Transciever/A+")
 			(pintype "passive")
 			(uuid "3f7e0fbb-6f52-49ea-bde3-923fa957ef32")
 		)
@@ -3474,22 +4163,22 @@
 	(footprint "Capacitor_SMD:C_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "ba7a51b0-cc3e-4c9e-aed4-0a620851208d")
-		(at 149.35 80.2)
+		(at 132.4125 83.2125 -90)
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C6"
-			(at 0 -1.16 0)
+			(at 0 -1.16 90)
 			(layer "F.SilkS")
 			(uuid "6e5d89a9-665e-4f23-a4ab-c4fe2ecf4238")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
 		)
-		(property "Value" "1uF|16V"
-			(at 0 1.16 0)
+		(property "Value" "330pF|50V"
+			(at 0 1.16 90)
 			(layer "F.Fab")
 			(uuid "7bd162bf-1524-48a1-88d6-31ebcc257281")
 			(effects
@@ -3500,7 +4189,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "031bcc1d-9a5d-4f66-afc8-3bf59e6092b8")
@@ -3512,7 +4201,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9eb249c6-bac9-4134-8792-108be64bd12b")
@@ -3524,7 +4213,7 @@
 			)
 		)
 		(property "Package" "0402"
-			(at 0 0 0)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3542,16 +4231,6 @@
 		(sheetfile "SN65HVD75DRBR_ModbusTransciever.kicad_sch")
 		(attr smd)
 		(fp_line
-			(start -0.107836 -0.36)
-			(end 0.107836 -0.36)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "9916649a-471e-4c3c-a88d-719af2358287")
-		)
-		(fp_line
 			(start -0.107836 0.36)
 			(end 0.107836 0.36)
 			(stroke
@@ -3562,14 +4241,14 @@
 			(uuid "5b0b87fe-ea12-4de7-b3f2-546fc4d24c57")
 		)
 		(fp_line
-			(start -0.91 -0.46)
-			(end 0.91 -0.46)
+			(start -0.107836 -0.36)
+			(end 0.107836 -0.36)
 			(stroke
-				(width 0.05)
+				(width 0.12)
 				(type solid)
 			)
-			(layer "F.CrtYd")
-			(uuid "9425a06a-cf00-44bd-8bfa-a0ba0b8dd156")
+			(layer "F.SilkS")
+			(uuid "9916649a-471e-4c3c-a88d-719af2358287")
 		)
 		(fp_line
 			(start -0.91 0.46)
@@ -3582,16 +4261,6 @@
 			(uuid "6567f0a3-181f-4d3b-971f-9bcc885662a2")
 		)
 		(fp_line
-			(start 0.91 -0.46)
-			(end 0.91 0.46)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "24b28f9c-7714-4a7e-985e-dcdde674fe12")
-		)
-		(fp_line
 			(start 0.91 0.46)
 			(end -0.91 0.46)
 			(stroke
@@ -3602,14 +4271,24 @@
 			(uuid "5c8d08f4-73fa-470e-a250-8918e8a080db")
 		)
 		(fp_line
-			(start -0.5 -0.25)
-			(end 0.5 -0.25)
+			(start -0.91 -0.46)
+			(end 0.91 -0.46)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "F.Fab")
-			(uuid "be45268f-a5fd-44cd-932f-055bca905a12")
+			(layer "F.CrtYd")
+			(uuid "9425a06a-cf00-44bd-8bfa-a0ba0b8dd156")
+		)
+		(fp_line
+			(start 0.91 -0.46)
+			(end 0.91 0.46)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "24b28f9c-7714-4a7e-985e-dcdde674fe12")
 		)
 		(fp_line
 			(start -0.5 0.25)
@@ -3622,16 +4301,6 @@
 			(uuid "b8c8bfdf-43a8-4bb6-b2ff-509c7bc5ebeb")
 		)
 		(fp_line
-			(start 0.5 -0.25)
-			(end 0.5 0.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "7a20c673-c6d0-4be9-9a61-27d7c5c11c5d")
-		)
-		(fp_line
 			(start 0.5 0.25)
 			(end -0.5 0.25)
 			(stroke
@@ -3641,8 +4310,28 @@
 			(layer "F.Fab")
 			(uuid "bec87e21-afd3-449b-bc67-79f1da05a244")
 		)
+		(fp_line
+			(start -0.5 -0.25)
+			(end 0.5 -0.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "be45268f-a5fd-44cd-932f-055bca905a12")
+		)
+		(fp_line
+			(start 0.5 -0.25)
+			(end 0.5 0.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "7a20c673-c6d0-4be9-9a61-27d7c5c11c5d")
+		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "36799d98-d23d-44bf-b955-b0d7a85be689")
 			(effects
@@ -3653,20 +4342,20 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.48 0)
+			(at -0.48 0 270)
 			(size 0.56 0.62)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 7 "unconnected-(C6-Pad1)")
+			(net 7 "/Modbus_Transciever/B-")
 			(pintype "passive")
 			(uuid "0b95b1b8-ded0-4540-9fa9-0541979cb13c")
 		)
 		(pad "2" smd roundrect
-			(at 0.48 0)
+			(at 0.48 0 270)
 			(size 0.56 0.62)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 8 "unconnected-(C6-Pad2)")
+			(net 19 "GND")
 			(pintype "passive")
 			(uuid "6dba4b7c-567e-4b18-a987-ae6c0c6b1831")
 		)
@@ -3695,7 +4384,7 @@
 			(uuid "1e7577d8-5e7f-4c08-bdab-f7fac09a7d66")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -3963,7 +4652,7 @@
 			(at -1.25 -1.25 270)
 			(size 0.3 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 31 "/USB To UART/RS485_DE")
+			(net 41 "/Modbus_Transciever/RS485_DE")
 			(pinfunction "RS485/GPIO.1")
 			(pintype "bidirectional")
 			(uuid "6d49e366-4c51-483f-a02b-a737018c54ae")
@@ -3972,7 +4661,7 @@
 			(at -1.55 -0.75 270)
 			(size 0.9 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 39 "unconnected-(U2-CLK{slash}GPIO.0-Pad2)")
+			(net 36 "unconnected-(U2-CLK{slash}GPIO.0-Pad2)")
 			(pinfunction "CLK/GPIO.0")
 			(pintype "bidirectional+no_connect")
 			(uuid "5942c679-bbc8-429b-83b7-886889664d11")
@@ -4008,7 +4697,7 @@
 			(at -1.25 1.25 270)
 			(size 0.3 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pinfunction "VDD")
 			(pintype "power_in")
 			(uuid "ddde1f4c-d712-4b21-b620-cb48db190117")
@@ -4017,7 +4706,7 @@
 			(at -0.75 1.55)
 			(size 0.9 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pinfunction "VREGIN")
 			(pintype "power_in")
 			(uuid "b3d6bfaf-1776-4a0f-bb8b-5b01b88f7a04")
@@ -4044,7 +4733,7 @@
 			(at 0.75 1.55)
 			(size 0.9 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 43 "unconnected-(U2-NC-Pad10)")
+			(net 40 "unconnected-(U2-NC-Pad10)")
 			(pinfunction "NC")
 			(pintype "no_connect")
 			(uuid "ff6d736e-8cf6-4f25-9119-4dcadcb0ed96")
@@ -4053,7 +4742,7 @@
 			(at 1.25 1.25 270)
 			(size 0.3 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 38 "unconnected-(U2-~{SUSPEND}-Pad11)")
+			(net 35 "unconnected-(U2-~{SUSPEND}-Pad11)")
 			(pinfunction "~{SUSPEND}")
 			(pintype "output+no_connect")
 			(uuid "493a2e91-a505-4e9e-8290-3e0fed832be0")
@@ -4071,7 +4760,7 @@
 			(at 1.55 0.25 270)
 			(size 0.9 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 40 "unconnected-(U2-~{WAKEUP}-Pad13)")
+			(net 37 "unconnected-(U2-~{WAKEUP}-Pad13)")
 			(pinfunction "~{WAKEUP}")
 			(pintype "input+no_connect")
 			(uuid "60596671-ded2-4f09-aa67-aaa060e06ec3")
@@ -4080,7 +4769,7 @@
 			(at 1.55 -0.25 270)
 			(size 0.9 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 41 "unconnected-(U2-SUSPEND-Pad14)")
+			(net 38 "unconnected-(U2-SUSPEND-Pad14)")
 			(pinfunction "SUSPEND")
 			(pintype "output+no_connect")
 			(uuid "81194f9b-362b-4708-88e6-31b2bfffc4c0")
@@ -4089,7 +4778,7 @@
 			(at 1.55 -0.75 270)
 			(size 0.9 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 42 "unconnected-(U2-~{CTS}-Pad15)")
+			(net 39 "unconnected-(U2-~{CTS}-Pad15)")
 			(pinfunction "~{CTS}")
 			(pintype "input+no_connect")
 			(uuid "a502f5ce-f258-472b-84e5-e9e463470922")
@@ -4098,7 +4787,7 @@
 			(at 1.25 -1.25 270)
 			(size 0.3 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 37 "unconnected-(U2-~{RTS}-Pad16)")
+			(net 34 "unconnected-(U2-~{RTS}-Pad16)")
 			(pinfunction "~{RTS}")
 			(pintype "output+no_connect")
 			(uuid "43b30bb7-a7bc-4a02-a702-6b5a62313c3b")
@@ -4107,7 +4796,7 @@
 			(at 0.75 -1.55)
 			(size 0.9 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 32 "/USB To UART/UART_RX")
+			(net 8 "/Modbus_Transciever/RS485_R")
 			(pinfunction "RXD")
 			(pintype "input")
 			(uuid "785916f5-0c98-49f7-9eda-fb61941795ce")
@@ -4116,7 +4805,7 @@
 			(at 0.25 -1.55)
 			(size 0.9 0.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 30 "/USB To UART/UART_TX")
+			(net 33 "/Modbus_Transciever/RS485_D")
 			(pinfunction "TXD")
 			(pintype "output")
 			(uuid "1c74e023-d740-410c-821f-1f70b52a4f37")
@@ -4173,7 +4862,7 @@
 			(uuid "771e66a4-024d-4d2e-a8e6-968b0d40ece6")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -4357,7 +5046,7 @@
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pinfunction "VO")
 			(pintype "power_out")
 			(uuid "84a7e788-32a9-447a-b6f7-3ea3da82ce76")
@@ -4367,7 +5056,7 @@
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 48 "/USB Type C & Power/VBUS")
+			(net 1 "/USB Type C & Power/VBUS_out")
 			(pinfunction "VI")
 			(pintype "power_in")
 			(uuid "5227d204-4eac-478b-9346-e43ecc5b6e0b")
@@ -4397,12 +5086,12 @@
 			(uuid "077fb944-2837-4aaa-9989-b661d11692e8")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
 		)
-		(property "Value" "22R"
+		(property "Value" "22R 1%"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "a01b81d1-b06f-4ca0-a9fa-5facc6d15f41")
@@ -4571,7 +5260,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 51 "unconnected-(R5-Pad1)")
+			(net 8 "/Modbus_Transciever/RS485_R")
 			(pintype "passive")
 			(uuid "b780836c-c522-41b1-9160-776016b4e810")
 		)
@@ -4580,7 +5269,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 54 "Net-(U3-R)")
+			(net 30 "Net-(RN1B-R2.1)")
 			(pintype "passive")
 			(uuid "ce9f9ac9-8765-4640-a325-2bda551d416d")
 		)
@@ -4609,7 +5298,7 @@
 			(uuid "b0e1cbcb-2167-403b-8fdd-e7b389fbb483")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -4847,7 +5536,7 @@
 			(uuid "bfc5d89e-8cf9-401c-b890-09ea3f95a8dc")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -5021,7 +5710,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 48 "/USB Type C & Power/VBUS")
+			(net 1 "/USB Type C & Power/VBUS_out")
 			(pintype "passive")
 			(uuid "92aa60c0-cded-44d0-bc4d-37cd29b148a7")
 		)
@@ -5059,7 +5748,7 @@
 			(uuid "42e5fda5-775a-4588-bc10-b3794191b3f7")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -5233,7 +5922,7 @@
 			(size 0.54 0.64)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pintype "passive")
 			(uuid "a682b13c-0ab0-403f-a0d0-da036d7340c8")
 		)
@@ -5262,7 +5951,7 @@
 	(footprint "Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.65x2.4mm"
 		(layer "F.Cu")
 		(uuid "ff352a60-c353-460a-95b2-c1863a7f6782")
-		(at 140 80.4 -90)
+		(at 131.0875 77.8625 -90)
 		(descr "VSON, 8 Pin (https://www.ti.com/lit/ds/symlink/tlv767-q1.pdf#page=31), generated with kicad-footprint-generator ipc_noLead_generator.py")
 		(tags "VSON NoLead")
 		(property "Reference" "U3"
@@ -5271,7 +5960,7 @@
 			(uuid "c08cd229-7ee9-48d1-954e-ad9bb6246760")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -5400,7 +6089,7 @@
 			(size 0.85 0.35)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 54 "Net-(U3-R)")
+			(net 30 "Net-(RN1B-R2.1)")
 			(pinfunction "R")
 			(pintype "output")
 			(uuid "c452f1c0-e3ae-462d-ab1f-fa44efb23b91")
@@ -5410,7 +6099,7 @@
 			(size 0.85 0.35)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 45 "unconnected-(U3-~{RE}-Pad2)")
+			(net 41 "/Modbus_Transciever/RS485_DE")
 			(pinfunction "~{RE}")
 			(pintype "input")
 			(uuid "8cba3823-aa0f-42fc-be5c-d8b9bf57c369")
@@ -5420,7 +6109,7 @@
 			(size 0.85 0.35)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 44 "unconnected-(U3-DE-Pad3)")
+			(net 41 "/Modbus_Transciever/RS485_DE")
 			(pinfunction "DE")
 			(pintype "input")
 			(uuid "1104856f-c543-4d0b-a165-049f6e51b81e")
@@ -5430,7 +6119,7 @@
 			(size 0.85 0.35)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 56 "Net-(U3-D)")
+			(net 46 "Net-(U3-D)")
 			(pinfunction "D")
 			(pintype "input")
 			(uuid "9947691e-5692-4d4d-ac5d-dc0e8ec50c9a")
@@ -5450,7 +6139,7 @@
 			(size 0.85 0.35)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 47 "unconnected-(U3-A-Pad6)")
+			(net 32 "Net-(U3-A)")
 			(pinfunction "A")
 			(pintype "bidirectional")
 			(uuid "da66596e-a8fe-4f79-9e12-dadc73e72d9c")
@@ -5460,7 +6149,7 @@
 			(size 0.85 0.35)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 46 "unconnected-(U3-B-Pad7)")
+			(net 31 "Net-(U3-B)")
 			(pinfunction "B")
 			(pintype "bidirectional")
 			(uuid "a9f87385-3ae1-4a2e-9138-9d263760eed7")
@@ -5470,7 +6159,7 @@
 			(size 0.85 0.35)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pinfunction "VCC")
 			(pintype "power_in")
 			(solder_mask_margin 0)
@@ -5523,7 +6212,7 @@
 			(uuid "b7263db6-bdd4-42ed-859d-295c0803c63b")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 				(justify mirror)
@@ -5703,7 +6392,7 @@
 			(size 0.54 0.64)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 49 "Net-(P1-CC)")
+			(net 42 "Net-(P1-CC)")
 			(pintype "passive")
 			(uuid "fa2c5b07-63b9-493f-a85e-0e7ca4d376fc")
 		)
@@ -5741,7 +6430,7 @@
 			(uuid "872b3bb8-bb6c-4f5f-ba8c-37e29ee9fa5b")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 				(justify mirror)
@@ -5917,7 +6606,7 @@
 			(at -0.5 0.25)
 			(size 0.5 0.3)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pinfunction "R2.1")
 			(pintype "passive")
 			(uuid "968e333f-9174-40d3-819a-f3421b0c6abe")
@@ -5926,7 +6615,7 @@
 			(at -0.5 -0.25)
 			(size 0.5 0.3)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pinfunction "R3.1")
 			(pintype "passive")
 			(uuid "239646ca-e851-493a-86e2-d1b04029cc02")
@@ -5935,7 +6624,7 @@
 			(at -0.5 -0.75)
 			(size 0.5 0.4)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pinfunction "R4.1")
 			(pintype "passive")
 			(uuid "330c5b24-bf48-4a2e-a7f6-338a5bf0e708")
@@ -5971,7 +6660,7 @@
 			(at 0.5 0.75)
 			(size 0.5 0.4)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net 50 "unconnected-(RN2-R1.2-Pad8)")
+			(net 43 "unconnected-(RN2-R1.2-Pad8)")
 			(pinfunction "R1.2")
 			(pintype "passive+no_connect")
 			(uuid "77f7af05-0b10-4245-9b5c-9ba3619a6970")
@@ -6001,7 +6690,7 @@
 			(uuid "ccd8cfe9-dc88-4d2f-926c-71f7df33eeb1")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 				(justify mirror)
@@ -6181,7 +6870,7 @@
 			(size 0.56 0.62)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 48 "/USB Type C & Power/VBUS")
+			(net 1 "/USB Type C & Power/VBUS_out")
 			(pintype "passive")
 			(uuid "1a457fbc-887e-4bef-bb83-ac6dbdec5345")
 		)
@@ -6219,7 +6908,7 @@
 			(uuid "db420ac1-6be1-4539-9dff-89af5b407238")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 				(justify mirror)
@@ -6399,7 +7088,7 @@
 			(size 0.56 0.62)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "/USB To UART/Vin")
+			(net 5 "+3.3V")
 			(pintype "passive")
 			(uuid "a6399b86-0611-4f0e-8bef-b87b4057fcf4")
 		)
@@ -6551,7 +7240,7 @@
 		(end 125.125 70.818749)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "2ceea6cb-24b8-43f2-9a82-41fd4495e1d8")
 	)
 	(segment
@@ -6559,7 +7248,7 @@
 		(end 125.125 71.8125)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "312ca2ba-befb-4317-9227-e570e9621604")
 	)
 	(segment
@@ -6567,7 +7256,7 @@
 		(end 125.125 71.8125)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "31967867-f954-40d1-880f-68e7d66db027")
 	)
 	(segment
@@ -6575,7 +7264,7 @@
 		(end 128.15 68.55)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "34fe42eb-ed5a-48fa-bfa8-1adb7adb24bc")
 	)
 	(segment
@@ -6583,7 +7272,7 @@
 		(end 127.911806 69.283269)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "497f7071-bd0b-4457-8b99-00a06bdbc69c")
 	)
 	(segment
@@ -6591,7 +7280,7 @@
 		(end 125.9 69.727512)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "6b73976e-8da8-4047-8a5c-6e1c32c7f708")
 	)
 	(segment
@@ -6599,7 +7288,7 @@
 		(end 128.225 68.970075)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "7aaac8ad-366c-444a-a59c-f47c71c2c436")
 	)
 	(segment
@@ -6607,7 +7296,7 @@
 		(end 126.344243 69.283269)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "83064f62-d365-4029-9aa5-7a0bdc9084e2")
 	)
 	(segment
@@ -6615,7 +7304,7 @@
 		(end 128.225 68.625)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "8fb623a7-6bb5-47b5-a3cf-7d77b0fffb73")
 	)
 	(segment
@@ -6623,7 +7312,7 @@
 		(end 125.9 70.043749)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "9056f411-1e95-457f-ae2e-7ad36f08808b")
 	)
 	(segment
@@ -6631,7 +7320,7 @@
 		(end 128.225 68.970075)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "b4fb4b1d-6255-4e61-a99d-67be0372fbc8")
 	)
 	(segment
@@ -6639,7 +7328,7 @@
 		(end 128.925 67.45)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "cecde776-b6ae-4ae6-bf4b-aa8b90fcb832")
 	)
 	(segment
@@ -6647,7 +7336,7 @@
 		(end 128.9 67.425)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "eb5c2b31-c435-459d-ab3a-1efdd5d9ec1d")
 	)
 	(segment
@@ -6655,7 +7344,7 @@
 		(end 125.025 71.775)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "eef156fc-e52a-437c-993a-58b5c1a8457d")
 	)
 	(segment
@@ -6663,7 +7352,7 @@
 		(end 128.225 68.375)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 52)
+		(net 44)
 		(uuid "fa59407b-20da-4422-9395-a0db7475eb45")
 	)
 	(via
@@ -6671,7 +7360,7 @@
 		(size 0.2)
 		(drill 0.1)
 		(layers "F.Cu" "B.Cu")
-		(net 52)
+		(net 44)
 		(uuid "2b6e4621-dc4b-4a54-9fc5-e34b0ac539e4")
 	)
 	(via
@@ -6679,7 +7368,7 @@
 		(size 0.2)
 		(drill 0.1)
 		(layers "F.Cu" "B.Cu")
-		(net 52)
+		(net 44)
 		(uuid "59e3dbff-1c96-41bb-b06d-15b6a807d9f6")
 	)
 	(segment
@@ -6687,7 +7376,7 @@
 		(end 128.225 68.970075)
 		(width 0.1)
 		(layer "B.Cu")
-		(net 52)
+		(net 44)
 		(uuid "64dc25d3-52f9-48de-be2b-f1d2170d16c8")
 	)
 	(segment
@@ -6695,7 +7384,7 @@
 		(end 128.225 68.55)
 		(width 0.1)
 		(layer "B.Cu")
-		(net 52)
+		(net 44)
 		(uuid "a7cb5d04-8b6c-41e9-9f27-e1df25c93fd8")
 	)
 	(segment
@@ -6703,7 +7392,7 @@
 		(end 128.925 67.85)
 		(width 0.1)
 		(layer "B.Cu")
-		(net 52)
+		(net 44)
 		(uuid "bb6162b8-b63c-4709-903d-853fc48538b5")
 	)
 	(segment
@@ -6711,7 +7400,7 @@
 		(end 126.25 69.872488)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "19dbb96d-ba5b-48be-9f4d-63a7d8658a74")
 	)
 	(segment
@@ -6719,7 +7408,7 @@
 		(end 128.65 68.55)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "25f20023-81ba-4be0-873e-b4c917fba26b")
 	)
 	(segment
@@ -6727,7 +7416,7 @@
 		(end 128.575 68.625)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "28269b5a-3de8-4e8a-af57-a3e26e79bbe7")
 	)
 	(segment
@@ -6735,7 +7424,7 @@
 		(end 128.65 68.3)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "43f741ca-0963-4bde-84c3-182a4653baec")
 	)
 	(segment
@@ -6743,7 +7432,7 @@
 		(end 126.25 70.043749)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "562c48c7-d810-48fa-a8e3-75ae104baf0f")
 	)
 	(segment
@@ -6751,7 +7440,7 @@
 		(end 126.925 71.775)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "6a14a6af-52bc-4bc5-8316-ceab23982e66")
 	)
 	(segment
@@ -6759,7 +7448,7 @@
 		(end 128.524 67.574)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "6a82fa21-cd3a-446c-be9c-35097eb185ee")
 	)
 	(segment
@@ -6767,7 +7456,7 @@
 		(end 127.025 71.8125)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "83b157b0-c13b-4412-b018-3a9e1c20ac10")
 	)
 	(segment
@@ -6775,7 +7464,7 @@
 		(end 128.524 67.574679)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "9eacdb97-e42d-483f-9d4b-ce00c944ad3f")
 	)
 	(segment
@@ -6783,7 +7472,7 @@
 		(end 128.575 69.115051)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "a1d0be8d-0d2e-411e-bb3e-cda148e10018")
 	)
 	(segment
@@ -6791,7 +7480,7 @@
 		(end 127.025 70.818749)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "acf08701-706b-43c0-ae82-2632789f02b0")
 	)
 	(segment
@@ -6799,7 +7488,7 @@
 		(end 128.056782 69.633269)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "b2dacc86-677d-4f0f-bdb0-ca350e8a0556")
 	)
 	(segment
@@ -6807,7 +7496,7 @@
 		(end 128.4 67.45)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "baa450c6-2bd8-4162-b128-fab206945015")
 	)
 	(segment
@@ -6815,7 +7504,7 @@
 		(end 126.489219 69.633269)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "ccf076c1-d24f-4ced-bd35-904add3f6223")
 	)
 	(segment
@@ -6823,7 +7512,7 @@
 		(end 128.65 67.700679)
 		(width 0.1)
 		(layer "F.Cu")
-		(net 53)
+		(net 45)
 		(uuid "cea1d00b-03e4-4678-b957-9e373becf08b")
 	)
 	(embedded_fonts no)

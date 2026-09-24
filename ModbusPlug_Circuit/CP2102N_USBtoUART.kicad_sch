@@ -1538,6 +1538,16 @@
 	)
 	(wire
 		(pts
+			(xy 198.12 78.74) (xy 209.55 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f0113a3-be1f-4f7d-a04e-13dfb2e636d6")
+	)
+	(wire
+		(pts
 			(xy 198.12 78.74) (xy 198.12 81.28)
 		)
 		(stroke
@@ -1575,16 +1585,6 @@
 			(type default)
 		)
 		(uuid "31105f1f-20df-47f3-93cb-b9083b842a6a")
-	)
-	(wire
-		(pts
-			(xy 198.12 66.04) (xy 198.12 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34e96c5e-1a20-4a3f-822a-f3e6649cfbd4")
 	)
 	(wire
 		(pts
@@ -1956,13 +1956,13 @@
 		)
 		(uuid "05b3ae1c-3931-4390-a363-8957e8275e09")
 	)
-	(label "Vin"
-		(at 198.12 66.04 0)
+	(label "3.3V_in"
+		(at 209.55 78.74 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "2033b4be-9a06-4bfb-bfb6-4a35000b7690")
 	)
@@ -2029,17 +2029,6 @@
 		)
 		(uuid "6e134992-f70a-4dbc-a2b0-24659b935b6c")
 	)
-	(hierarchical_label "Vin"
-		(shape input)
-		(at 60.96 50.8 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "763ecdfc-0982-4531-b4c3-a5eba952c7c6")
-	)
 	(hierarchical_label "UART_RX"
 		(shape input)
 		(at 114.3 74.93 0)
@@ -2061,6 +2050,17 @@
 			(justify left)
 		)
 		(uuid "cb695ec2-7de8-4371-bd62-01153b4d67e6")
+	)
+	(hierarchical_label "3.3V_in"
+		(shape input)
+		(at 60.96 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e5522c32-a74b-4abe-9c5f-2f6182e0acaf")
 	)
 	(hierarchical_label "Din_+"
 		(shape bidirectional)

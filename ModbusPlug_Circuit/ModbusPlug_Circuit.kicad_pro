@@ -43,8 +43,8 @@
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
-        "silk_text_size_h": 1.0,
-        "silk_text_size_v": 1.0,
+        "silk_text_size_h": 0.8,
+        "silk_text_size_v": 0.8,
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
@@ -574,11 +574,11 @@
       },
       {
         "netclass": "USB_PWR",
-        "pattern": "/USB Type C & Power/VBUS"
+        "pattern": "/USB Type C & Power/VBUS_out"
       },
       {
         "netclass": "REG_PWR",
-        "pattern": "/USB To UART/Vin"
+        "pattern": "+3.3V"
       },
       {
         "netclass": "GND",
