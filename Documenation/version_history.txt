@@ -14,3 +14,8 @@ Dated : 24-09-26
 -Updated Board stackup count to 4 layers 
 -Revised Netclasses as per new labels
 -played with SN65HVD75DRBR component placement
+
+v0.1.2
+Dated : 27-09-26
+-Updated PCB stackup setting, for impedance control.
+-Updated component placement.
