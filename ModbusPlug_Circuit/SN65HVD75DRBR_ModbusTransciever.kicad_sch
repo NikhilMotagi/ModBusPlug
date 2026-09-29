@@ -2607,6 +2607,7 @@
 	(symbol
 		(lib_id "Device:R_Pack02_Split")
 		(at 69.85 113.03 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2614,7 +2615,7 @@
 		(dnp no)
 		(uuid "ad4cdb6a-2a71-4673-98b4-dc627c93195e")
 		(property "Reference" "RN1"
-			(at 72.39 111.7599 0)
+			(at 72.39 114.3001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2623,7 +2624,7 @@
 			)
 		)
 		(property "Value" "10k 5%"
-			(at 72.39 114.2999 0)
+			(at 72.39 111.7601 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2659,7 +2660,7 @@
 			)
 		)
 		(property "Package" "2x0402"
-			(at 75.946 116.586 0)
+			(at 75.946 109.474 0)
 			(effects
 				(font
 					(size 1.27 1.27)

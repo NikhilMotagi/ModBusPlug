@@ -2140,13 +2140,13 @@
 	)
 	(symbol
 		(lib_id "Device:R_Pack04")
-		(at 189.23 81.28 90)
+		(at 189.23 81.28 270)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2dff664e-a009-458b-b33c-85facfb23b18")
 		(property "Reference" "RN2"
 			(at 189.23 72.39 90)
