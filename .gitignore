@@ -60,3 +60,4 @@ desktop.ini
 
 # KiCad automatic backup folder
 backup/
+*.FCBak

@@ -58,7 +58,24 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "silk_edge_clearance|124125000|66200000|7cc4c565-af2d-413d-8d90-05b473f4505a|f4f72d41-036e-4d10-9b51-efc90fb9b898",
+          ""
+        ],
+        [
+          "silk_edge_clearance|125400000|66200000|7cc4c565-af2d-413d-8d90-05b473f4505a|afc17c2b-5e81-4a07-b73d-04e0f9096360",
+          ""
+        ],
+        [
+          "silk_edge_clearance|132925000|66200000|137961ba-5dbe-4690-a66a-ec6b35919b6a|186b240e-9e1d-405c-983e-0ac7b98ace2f",
+          ""
+        ],
+        [
+          "silk_edge_clearance|132925000|66200000|137961ba-5dbe-4690-a66a-ec6b35919b6a|3d1c9c85-f1d4-46c3-b912-a8652ecd9e92",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -131,14 +148,14 @@
         "min_hole_to_hole": 0.1,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
-        "min_resolved_spokes": 2,
+        "min_resolved_spokes": 1,
         "min_silk_clearance": 0.0,
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.3,
+        "min_through_hole_diameter": 0.2,
         "min_track_width": 0.0,
         "min_via_annular_width": 0.1,
-        "min_via_diameter": 0.5,
+        "min_via_diameter": 0.4,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -592,10 +609,10 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "../Fab/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../Illustration/ModbusPlug_Circuit.step",
       "svg": "",
       "vrml": ""
     },

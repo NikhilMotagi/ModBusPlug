@@ -23,5 +23,13 @@ Dated : 27-09-26
 V0.1.3
 Dated : 29-09-26
 -Updated 22 ohm network resistor arrangement for PCB routing convenience
--Updated signal routing, added fill shapes for power and ground for all layers
+-Completed signal routing, added fill shapes for power and ground for all layers
 -Added QFN20 step file for 3d visualization  
+
+V0.1.4
+Dated : 01-10-26
+-Added logo silkscreen
+-Updated ref des silkscreen placement
+-Checked and corrected DRC
+-Adding Fab notations and PCB closure notes
+-Added Title blocks and boxes for schematic layout
